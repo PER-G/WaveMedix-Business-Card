@@ -345,7 +345,7 @@ function downloadVCard(){
 // Share card via native share (iOS/Android share sheet)
 async function shareCard(){
   const p=TEAM[ci];
-  const shareText=p.name+' | '+p.role+' – WaveMedix AG\n\n'+
+  const shareText=p.name+' | '+p.role+' – WaveMedix Inc\n\n'+
     '✉ '+p.email+'\n'+
     '📱 '+p.phone+'\n'+
     '💼 '+p.linkedin+'\n'+
@@ -393,12 +393,12 @@ function buildVCard(p){
   const prefix=p.name.startsWith('Dr.')?'Dr.':'';
   return['BEGIN:VCARD','VERSION:3.0',
     'N:'+last+';'+first+';;'+(prefix?prefix+';':''),
-    'FN:'+p.name,'ORG:WaveMedix AG','TITLE:'+p.role,
+    'FN:'+p.name,'ORG:WaveMedix Inc','TITLE:'+p.role,
     'TEL;TYPE=CELL:'+p.phone.replace(/\s/g,''),
     'EMAIL;TYPE=WORK:'+p.email,'URL:https://www.wavemedix.ai',
     'URL;TYPE=LinkedIn:'+p.linkedin,
     'ADR;TYPE=WORK:;;Blonay;;1807;Switzerland',
-    'NOTE:WaveMedix AG – Transparent Intelligence for Medical AI\\nLinkedIn: '+p.linkedin,
+    'NOTE:WaveMedix Inc – Transparent Intelligence for Medical AI\\nLinkedIn: '+p.linkedin,
     'END:VCARD'].join('\r\n');
 }
 function fallbackCopy(text){
